@@ -1,0 +1,39 @@
+# DataSource Config
+spring:
+  #redis:
+  #  host: 127.0.0.1
+  #  port: 6379
+  #  timeout: 5000
+  #  jedis:
+  #    pool:
+  #      max-active: 8
+  #      max-idle: 8
+  #      min-idle: 0
+  #      max-wait: -1
+  application:
+    name: ware-jwt-token
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/myos?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8088
+  servlet:
+    context-path: /me
+
+darkness:
+  jwt:
+    expire: 604800604800
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    header: Authorization
+
+shiro-redis:
+  enabled: true
+  redis-manager:
+    host: 127.0.0.1:6379
+
+
